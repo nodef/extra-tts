@@ -33,7 +33,7 @@ tts -t speech.txt -o speech.mp3
 tts "Hello 911, my husband is in danger!" -vg female
 # out.mp3 created with female voice
 
-echo "Dead man walking." | tts --log -p amazon -vn Matthew
+echo "Dead man walking." | tts -p amazon -vn Matthew --log
 # out.mp3 created with different male voice through Aamzon TTS (log enabled)
 ```
 > Available [Google TTS voices]?<br>

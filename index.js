@@ -36,6 +36,7 @@ function load(pro) {
  * @param {string} out Output audio file.
  * @param {string} txt Input text.
  * @param {object} o Options
+ * @returns {Promise} Table of contents.
  */
 function tts(out, txt, o) {
   o = o||{};
@@ -47,14 +48,13 @@ function tts(out, txt, o) {
 function options(o, k, a, i) {
   var e = k.indexOf('='), v = null, str = () => a[++i];
   if(e>=0) { v = k.substring(e+1); str = () => v; k = k.substring(o, e); }
-  var process = true; o.argvs = o.argvs||[];
-  if(k==='-p' || k==='--provider') { o.provider = str(); process = false; }
-  else if(i<a.length-2) { o.argvs.push({k, a, i}); return i+1; }
-  var pro = o.provider||OPTIONS.provider, fn = load(pro).options;
-  if(process) i = fn(o, k, a, i);
-  for(var {k, a, i} of o.argvs)
-    fn(o, k, a, i);
-  o.argvs = [];
+  if(!o.provider) {
+    for(var j=i, J=a.length; j<J; j++)
+      if(a[j]==='-p' || a[j]==='--provider') { o.provider = a[++j]; break; }
+    o.provider = o.provider||OPTIONS.provider;
+  }
+  if(k==='-p' || k==='--provider') o.provider = str();
+  else return load(o.provider).options(o, k, a, i);
   return i+1;
 };
 
@@ -67,11 +67,10 @@ async function shell(a) {
   var o = {argv: getStdin()};
   for(var i=2, I=a.length; i<I; i++)
     options(o, a[i], a, i);
-  var pro = o.provider||OPTIONS.provider;
-  var dir = path.dirname(require.resolve(name(pro)));
-  if(o.help) return cp.execSync('less README.md', {cwd: dir, stdio: STDIO});
+  if(o.help) return cp.execSync('less README.md', {cwd: __dirname, stdio: STDIO});
   var out = o.output||OPTIONS.output;
   var txt = o.text? fs.readFileSync(o.text, 'utf8'):o.argv||'';
+  var pro = o.provider||OPTIONS.provider;
   var toc = await load(pro)(out, txt, o);
   if(o.log || OPTIONS.log) return;
   for(var c of toc)
