@@ -1,14 +1,14 @@
 {
   "name": "extra-tts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate speech audio from super long text through machine.",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "tts": "index.js"
+  },
   "scripts": {
     "test": "exit"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodef/extra-tts.git"
   },
   "keywords": [
     "extra",
@@ -26,10 +26,18 @@
     "shell",
     "merferry"
   ],
-  "author": "wolfram77@gmail.com",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/extra-tts.git"
+  },
   "bugs": {
     "url": "https://github.com/nodef/extra-tts/issues"
   },
-  "homepage": "https://github.com/nodef/extra-tts#readme"
+  "homepage": "https://github.com/nodef/extra-tts#readme",
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "extra-amazontts": "^1.1.12",
+    "extra-googletts": "^1.6.14"
+  }
 }
