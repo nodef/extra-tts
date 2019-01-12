@@ -19,31 +19,42 @@ const OPTIONS = {
 };
 
 
+// Get package name from provider.
 function name(pro) {
   if(/amazon|aws/i.test(pro)) return 'extra-amazontts';
   else return 'extra-googletts';
 };
 
+// Get package export from provider.
 function load(pro) {
   if(/amazon|aws/i.test(pro)) return amazontts=amazontts||require('extra-amazontts');
   else return googletts=googletts||require('extra-googletts');
 };
 
+/**
+ * Generate speech audio from super long text through machine.
+ * @param {string} out Output audio file.
+ * @param {string} txt Input text.
+ * @param {object} o Options
+ */
 function tts(out, txt, o) {
   o = o||{};
   var pro = o.provider||OPTIONS.provider;
   return load(pro)(out, txt, o);
 };
 
+// Get options from arguments.
 function options(o, k, a, i) {
   var e = k.indexOf('='), v = null, str = () => a[++i];
   if(e>=0) { v = k.substring(e+1); str = () => v; k = k.substring(o, e); }
-  o.argvs = o.argvs||{};
-  if(k==='-p' || k==='--provider') o.provider = str();
+  var process = true; o.argvs = o.argvs||[];
+  if(k==='-p' || k==='--provider') { o.provider = str(); process = false; }
   else if(i<a.length-2) { o.argvs.push({k, a, i}); return i+1; }
   var pro = o.provider||OPTIONS.provider, fn = load(pro).options;
+  if(process) i = fn(o, k, a, i);
   for(var {k, a, i} of o.argvs)
     fn(o, k, a, i);
+  o.argvs = [];
   return i+1;
 };
 
@@ -52,10 +63,10 @@ module.exports = tts;
 
 
 // Run on shell.
-function shell(a) {
+async function shell(a) {
   var o = {argv: getStdin()};
   for(var i=2, I=a.length; i<I; i++)
-    options(o, k, a, i);
+    options(o, a[i], a, i);
   var pro = o.provider||OPTIONS.provider;
   var dir = path.dirname(require.resolve(name(pro)));
   if(o.help) return cp.execSync('less README.md', {cwd: dir, stdio: STDIO});
