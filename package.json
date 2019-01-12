@@ -1,0 +1,35 @@
+{
+  "name": "extra-tts",
+  "version": "0.0.1",
+  "description": "Generate speech audio from super long text through machine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/extra-tts.git"
+  },
+  "keywords": [
+    "extra",
+    "tts",
+    "text",
+    "speech",
+    "provider",
+    "audio",
+    "long",
+    "machine",
+    "ffmpeg",
+    "cli",
+    "command",
+    "console",
+    "shell",
+    "merferry"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodef/extra-tts/issues"
+  },
+  "homepage": "https://github.com/nodef/extra-tts#readme"
+}
