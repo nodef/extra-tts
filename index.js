@@ -2,7 +2,6 @@
 const getStdin = require('get-stdin');
 const boolean = require('boolean');
 const cp = require('child_process');
-const path = require('path');
 const fs = require('fs');
 var amazontts = null;
 var googletts = null;

@@ -209,6 +209,8 @@ Suggestions are welcome. Please [create an issue].
 
 [Google TTS]: https://www.npmjs.com/package/extra-googletts
 [Amazon TTS]: https://www.npmjs.com/package/extra-amazontts
+[Google TTS voices]: https://cloud.google.com/text-to-speech/docs/voices
+[Amazon TTS voices]: https://docs.aws.amazon.com/polly/latest/dg/voicelist.html
 [Extra GCP Config]: https://www.npmjs.com/package/extra-gcpconfig
 [Extra AWS Config]: https://www.npmjs.com/package/extra-awsconfig
 
