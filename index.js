@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const getStdin = require('get-stdin');
-const boolean = require('boolean');
+const {boolean} = require('boolean');
 const cp = require('child_process');
 const fs = require('fs');
 var amazontts = null;
