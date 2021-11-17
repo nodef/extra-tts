@@ -8,20 +8,22 @@ Generate speech audio from super long text through machine.
 > - Or, [Upload Wikipedia TTS videos on YouTube]?
 
 Sample: ["I want to order a stuffed crust pizza"](https://clyp.it/kje2yfdk).
+
+<br>
 <br>
 
 
-## setup
-
-### install
+## Setup
 
 1. Run `npm install -g extra-tts` in **console**.
 2. To install this as a package use `npm install extra-tts`.
 3. Check setup for [Google TTS] and [Amazon TTS] separately.
+
+<br>
 <br>
 
 
-## console
+## Console
 
 ```bash
 tts "I want to order a stuffed crust pizza"
@@ -40,7 +42,7 @@ echo "Dead man walking." | tts -p amazon -vn Matthew --log
 > Available [Amazon TTS voices]?
 
 
-### reference
+### Reference
 
 ```bash
 tts [options] <text>
@@ -103,10 +105,12 @@ $TTS_BLOCK_LENGTH       # set block length (5000)
 ```
 > See [Extra GCP Config] options.<br>
 > See [Extra AWS Config] options.
+
+<br>
 <br>
 
 
-## package
+## Package
 
 ```javascript
 const tts = require('extra-tts');
@@ -130,7 +134,8 @@ await tts('out.mp3', 'Dead man walking.', {
 // out.mp3 created with different male voice through Amazon TTS (log enabled)
 ```
 
-### reference
+
+### Reference
 
 ```javascript
 const tts = require('extra-tts');
@@ -189,17 +194,21 @@ options = {
 ```
 > See [Extra GCP Config] options.<br>
 > See [Extra AWS Config] options.
+
+<br>
 <br>
 
 
-## similar
+## Similar
 
 Do you need anything similar?
 - [extra-youtubeuploader] can upload videos with caption to YouTube.
 - [extra-stillvideo] can generate video from audio and image.
 
 Suggestions are welcome. Please [create an issue].
-<br><br>
+
+<br>
+<br>
 
 
 [![nodef](https://i.imgur.com/LPVfMny.jpg)](https://nodef.github.io)
