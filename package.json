@@ -1,6 +1,6 @@
 {
   "name": "extra-tts",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Generate speech audio from super long text through machine.",
   "main": "index.js",
   "preferGlobal": true,
@@ -23,8 +23,7 @@
     "cli",
     "command",
     "console",
-    "shell",
-    "merferry"
+    "shell"
   ],
   "repository": {
     "type": "git",
@@ -37,9 +36,9 @@
   "author": "wolfram77@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "boolean": "^3.0.2",
-    "extra-amazontts": "^1.1.14",
-    "extra-googletts": "^1.6.25",
-    "get-stdin": "^8.0.0"
+    "boolean": "^3.1.4",
+    "extra-amazontts": "^1.1.18",
+    "extra-googletts": "^1.6.27",
+    "get-stdin": "^9.0.0"
   }
 }
