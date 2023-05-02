@@ -1,6 +1,6 @@
 {
   "name": "extra-tts",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Generate speech audio from super long text through machine.",
   "main": "index.js",
   "preferGlobal": true,
@@ -39,6 +39,6 @@
     "get-stdin": "^9.0.0",
     "boolean": "^3.2.0",
     "extra-amazontts": "^1.1.18",
-    "extra-googletts": "^1.6.28"
+    "extra-googletts": "^1.6.31"
   }
 }
