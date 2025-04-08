@@ -223,6 +223,8 @@ Suggestions are welcome. Please [create an issue].
 [Extra GCP Config]: https://www.npmjs.com/package/extra-gcpconfig
 [Extra AWS Config]: https://www.npmjs.com/package/extra-awsconfig
 
+![](https://ga-beacon.deno.dev/G-RC63DPBH3P:SH3Eq-NoQ9mwgYeHWxu7cw/github.com/nodef/extra-tts)
+
 [extra-stillvideo]: https://www.npmjs.com/package/extra-stillvideo
 [extra-youtubeuploader]: https://www.npmjs.com/package/extra-youtubeuploader
 [create an issue]: https://github.com/nodef/extra-tts/issues
